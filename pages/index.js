@@ -7,17 +7,8 @@ export default function Home() {
   const [query, setQuery] = useState("");
   return (
     <div className="w-full h-screen flex flex-col">
-      <AnimatePresence
-        // initial={false}
-        exitBeforeEnter={true}
-        // onExitComplete={() => null}
-      >
-        {!query ? (
-          <Search query={query} setQuery={setQuery} key="search" />
-        ) : (
-          <Result query={query} setQuery={setQuery} key="result" />
-        )}
-      </AnimatePresence>
+      <Search query={query} setQuery={setQuery} key="search" />
+      {query && <Result query={query} setQuery={setQuery} key="result" />}
     </div>
   );
 }
