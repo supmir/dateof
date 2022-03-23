@@ -69,7 +69,7 @@ export default function Search(props) {
           </div>
           <div>dateof.my/</div>
         </div>
-        <div className="flex">
+        <div className="flex flex-1">
           <input
             ref={queryRef}
             type="text"
