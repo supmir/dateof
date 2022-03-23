@@ -5,7 +5,7 @@ export default function Search(props) {
   const { query, setQuery } = props;
   const queryRef = useRef();
   return (
-    <Animator start="top" animation="default" end="top">
+    <motion.div className="m-auto flex w-full max-w-xl" layout>
       <div className="m-auto flex w-full max-w-xl mx-1">
         <span className="bg-gray-500 rounded-l-xl p-1">dateof.my/</span>
         <input
@@ -26,6 +26,6 @@ export default function Search(props) {
           Check
         </motion.button>
       </div>
-    </Animator>
+    </motion.div>
   );
 }
