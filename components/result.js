@@ -28,22 +28,24 @@ export default function Result(props) {
         </div>
         <div className="text-2xl underline">Price:</div>
         <table className="">
-          {data.items.map(({ id, name, desc, price }) => (
+          <tbody>
+            {data.items.map(({ id, name, desc, price }) => (
+              <tr
+                key={id}
+                className="border-y first:border-t-0 last:border-b-0"
+              >
+                <td className="text-left text-xl">{name}</td>
+                <td className="text-right italic text-md">{desc}</td>
+                <td className="text-right text-lg">RM{price}</td>
+              </tr>
+            ))}
             <tr key="id" className="border-y first:border-t-0 last:border-b-0">
-              <td className="text-left text-xl">{name}</td>
-              <td className="text-right italic text-md">{desc}</td>
-              <td className="text-right text-lg">RM{price}</td>
+              <td className=""></td>
+              <td className="text-right text-xl text-bold">Total</td>
+              <td className="text-right text-lg">RM{data.total}</td>
             </tr>
-          ))}
-          <tr key="id" className="border-y first:border-t-0 last:border-b-0">
-            <td className=""></td>
-            <td className="text-right text-xl text-bold">Total</td>
-            <td className="text-right text-lg">RM{data.total}</td>
-          </tr>
+          </tbody>
         </table>
-      </div>
-      <div className="fixed -mt-20" onClick={() => setQuery("")}>
-        <ArrowCircleUpIcon className="block h-10 w-10 text-gray-900" />
       </div>
     </Animator>
   );
