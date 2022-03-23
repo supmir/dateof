@@ -111,6 +111,10 @@ export default function Search(props) {
           )}
         </motion.button>
       </div>
+
+      {phase !== "show" && (
+        <div className="w-full h-10 bg-gradient-to-b from-white"></div>
+      )}
     </motion.div>
   );
 }
