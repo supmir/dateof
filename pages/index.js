@@ -4,11 +4,19 @@ import Result from "../components/result";
 import Search from "../components/search";
 
 export default function Home() {
-  const [query, setQuery] = useState("");
+  const [phase, setPhase] = useState("start");
+  const [data, setData] = useState();
   return (
     <div className="w-full h-screen flex flex-col">
-      <Search query={query} setQuery={setQuery} key="search" />
-      {query && <Result query={query} setQuery={setQuery} key="result" />}
+      <Search
+        phase={phase}
+        setPhase={setPhase}
+        setData={setData}
+        key="search"
+      />
+      {phase === "show" && (
+        <Result phase={phase} setPhase={setPhase} key="result" />
+      )}
     </div>
   );
 }

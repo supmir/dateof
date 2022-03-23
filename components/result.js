@@ -1,5 +1,3 @@
-import { ArrowCircleUpIcon } from "@heroicons/react/solid";
-import { Fragment } from "react/cjs/react.production.min";
 import Animator from "./animator";
 export default function Result(props) {
   const { query, setQuery } = props;
@@ -14,13 +12,13 @@ export default function Result(props) {
 
   return (
     <Animator start="bottom" animation="default" end="bottom">
-      <div className="m-auto flex w-full max-w-xl mx-1 gap-y-2 flex-col">
+      <div className="mt-20 flex w-full max-w-xl mx-1 gap-y-2 flex-col">
         <div className="w-full flex">
           <div className="border border-gray-900 rounded-l-xl p-1">
-            7th March 2022
+            March 2022
           </div>
           <div className="border border-gray-900 p-1">to</div>
-          <div className="border border-gray-900 p-1">15th April 2022</div>
+          <div className="border border-gray-900 p-1">April 2022</div>
           <div className="border border-gray-900 p-1 flex-1">
             dateof.my/{query}
           </div>
