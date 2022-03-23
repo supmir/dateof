@@ -5,7 +5,10 @@ export default function Search(props) {
   const { query, setQuery } = props;
   const queryRef = useRef();
   return (
-    <motion.div className="m-auto flex w-full max-w-xl" layout>
+    <motion.div
+      className={`m-auto flex w-full max-w-xl ${query && "mt-20"}`}
+      layout
+    >
       <div className="m-auto flex w-full max-w-xl mx-1">
         <span className="bg-gray-500 rounded-l-xl p-1">dateof.my/</span>
         <input

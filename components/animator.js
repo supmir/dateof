@@ -25,7 +25,7 @@ export default function Animator(props) {
   };
   return (
     <motion.div
-      className="m-auto flex w-full max-w-xl"
+      className="m-auto flex w-full max-w-xl h-full"
       initial={locations[start]}
       animate={animations[animation]}
       exit={locations[end]}
