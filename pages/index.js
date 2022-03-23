@@ -6,16 +6,16 @@ import Search from "../components/search";
 export default function Home() {
   const [query, setQuery] = useState("");
   return (
-    <div className="w-full h-screen flex">
+    <div className="w-full h-screen flex flex-col">
       <AnimatePresence
         // initial={false}
         exitBeforeEnter={true}
         // onExitComplete={() => null}
       >
-        {query ? (
-          <Result setQuery={setQuery} key="result" />
-        ) : (
+        {!query ? (
           <Search setQuery={setQuery} key="search" />
+        ) : (
+          <Result setQuery={setQuery} key="result" />
         )}
       </AnimatePresence>
     </div>

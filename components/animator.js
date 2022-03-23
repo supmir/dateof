@@ -1,53 +1,34 @@
 import { motion } from "framer-motion";
 export default function Animator(props) {
-  const { animation, children } = props;
-  const animations = {
-    moveUp: {
-      hidden: {
-        y: "-100vh",
-        opacity: 0,
-      },
-      visible: {
-        y: "0",
-        opacity: 1,
-        transition: {
-          duration: "0.5",
-          // damping: 1,
-          // stiffness: 10,
-        },
-      },
-      exit: {
-        y: "100vh",
-        opacity: 0,
-      },
+  const { start, animation, end, children } = props;
+  const locations = {
+    top: {
+      y: "-100vh",
+      opacity: 0,
     },
-    moveDown: {
-      hidden: {
-        y: "100vh",
-        opacity: 0,
-      },
-      visible: {
-        y: "0",
-        opacity: 1,
-        transition: {
-          duration: "0.5",
-          // damping: 1,
-          // stiffness: 10,
-        },
-      },
-      exit: {
-        y: "-100vh",
-        opacity: 0,
+    bottom: {
+      y: "100vh",
+      opacity: 0,
+    },
+  };
+  const animations = {
+    default: {
+      y: "0",
+      opacity: 1,
+      transition: {
+        duration: "0.1",
+        type: "spring",
+        damping: 15,
+        stiffness: 200,
       },
     },
   };
   return (
     <motion.div
       className="m-auto flex w-full max-w-xl"
-      variants={animations[animation]}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
+      initial={locations[start]}
+      animate={animations[animation]}
+      exit={locations[end]}
     >
       {children}
     </motion.div>

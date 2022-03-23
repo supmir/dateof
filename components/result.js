@@ -3,11 +3,11 @@ import Animator from "./animator";
 export default function Result(props) {
   const { setQuery } = props;
   return (
-    <Animator animation="moveUp">
+    <Animator start="bottom" animation="default" end="bottom">
       <div className="fixed -mt-20" onClick={() => setQuery("")}>
         <ArrowCircleUpIcon className="block h-10 w-10 text-gray-900" />
       </div>
-      <span className="border border-gray-900 rounded-l-xl p-1">
+      <span className="border border-gray-900 rounded-l-xl p-1 ml-1">
         7th March 2022
       </span>
       <span className="border border-gray-900 p-1">to</span>
@@ -15,7 +15,7 @@ export default function Result(props) {
       <span className="border border-gray-900 p-1 flex-1">
         dateof.my/example
       </span>
-      <span className="bg-green-500 rounded-r-xl p-1">Get now</span>
+      <span className="bg-green-500 rounded-r-xl p-1 mr-1">Book</span>
     </Animator>
   );
 }
