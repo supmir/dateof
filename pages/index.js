@@ -13,9 +13,9 @@ export default function Home() {
         // onExitComplete={() => null}
       >
         {!query ? (
-          <Search setQuery={setQuery} key="search" />
+          <Search query={query} setQuery={setQuery} key="search" />
         ) : (
-          <Result setQuery={setQuery} key="result" />
+          <Result query={query} setQuery={setQuery} key="result" />
         )}
       </AnimatePresence>
     </div>
