@@ -15,9 +15,11 @@ import {
   CheckCircleIcon,
   StarIcon,
 } from "@heroicons/react/solid";
+import { useState } from "react";
 export default function Search(props) {
   const { setPhase, phase, setData } = props;
   const queryRef = useRef();
+  const [q, setQ] = useState(false);
 
   async function GetQuote() {
     const q = queryRef.current.value;
@@ -40,7 +42,7 @@ export default function Search(props) {
       }`}
       layout
     >
-      <div className="m-auto flex w-full mx-1 bg-gray-300 h-10 rounded-t-xl shadow-xl">
+      <div className="m-auto flex w-full  bg-gray-300 h-10 rounded-t-xl shadow-xl">
         <div>
           <DotsHorizontalIcon className="w-12 h-full" />
         </div>
@@ -51,7 +53,7 @@ export default function Search(props) {
           </div>
         </div>
       </div>
-      <div className="m-auto flex w-full mx-1 bg-gray-100 p-1">
+      <div className="m-auto flex w-full bg-gray-100 p-1">
         <div>
           <ArrowLeftIcon className="w-5 h-full" />
         </div>
@@ -61,21 +63,27 @@ export default function Search(props) {
         <div>
           <RefreshIcon className="w-5 h-full" />
         </div>
-        <div className="rounded-l-xl p-1 bg-white flex">
+        <div className="rounded-l-xl py-1 bg-white flex">
           <div>
             <LockClosedIcon className="w-5 h-full" />
           </div>
           <div>dateof.my/</div>
         </div>
-        <input
-          ref={queryRef}
-          type="text"
-          placeholder=""
-          className="text-sm py-1 px-2 ring-0 focus:ring-0 block w-full"
-          onChange={() => {
-            setPhase("start");
-          }}
-        ></input>
+        <div className="flex">
+          <input
+            ref={queryRef}
+            type="text"
+            placeholder=""
+            className="py-1 outline-none ring-0 focus:ring-0 block w-full text-blue-500 underline"
+            onChange={() => {
+              setQ(true);
+              setPhase("start");
+            }}
+          ></input>
+          <div className={`absolute animate-bounce mt-3 ${q && "hidden"}`}>
+            _
+          </div>
+        </div>
         <motion.button
           layout
           whileHover={{ scale: 1.1 }}

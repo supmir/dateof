@@ -18,7 +18,7 @@ export default function Animator(props) {
       transition: {
         duration: "0.1",
         type: "spring",
-        damping: 15,
+        damping: 50,
         stiffness: 200,
       },
     },

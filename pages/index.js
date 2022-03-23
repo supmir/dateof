@@ -7,7 +7,7 @@ export default function Home() {
   const [phase, setPhase] = useState("start");
   const [data, setData] = useState();
   return (
-    <div className="w-full h-screen flex flex-col">
+    <div className="w-full h-screen flex flex-col bg-red-200 px-4">
       <Search
         phase={phase}
         setPhase={setPhase}
