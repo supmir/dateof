@@ -5,14 +5,16 @@ export default function Search(props) {
   const queryRef = useRef();
 
   async function GetQuote() {
-    setPhase("loading");
-
-    const res = await fetch(`/api/quote?q=${queryRef.current.value}`, {
-      method: "GET",
-    });
-    if (res.ok) {
-      setData(await res.json());
-      setPhase("show");
+    const q = queryRef.current.value;
+    if (q) {
+      setPhase("loading");
+      const res = await fetch(`/api/quote?q=${q}`, {
+        method: "GET",
+      });
+      if (res.ok) {
+        setData(await res.json());
+        setPhase("show");
+      }
     }
   }
 

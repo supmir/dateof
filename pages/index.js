@@ -14,9 +14,7 @@ export default function Home() {
         setData={setData}
         key="search"
       />
-      {phase === "show" && (
-        <Result phase={phase} setPhase={setPhase} key="result" />
-      )}
+      {phase === "show" && <Result data={data} key="result" />}
     </div>
   );
 }

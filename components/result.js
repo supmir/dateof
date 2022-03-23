@@ -1,26 +1,18 @@
 import Animator from "./animator";
 export default function Result(props) {
-  const { query, setQuery } = props;
-
-  const data = {
-    items: [
-      { id: 1, name: "Premium Link", price: 5000 },
-      { id: 2, name: "3 Months", desc: "3 x RM20", price: 60 },
-    ],
-    total: 5060,
-  };
+  const { data } = props;
 
   return (
     <Animator start="bottom" animation="default" end="bottom">
       <div className="mt-20 flex w-full max-w-xl mx-1 gap-y-2 flex-col">
         <div className="w-full flex">
           <div className="border border-gray-900 rounded-l-xl p-1">
-            March 2022
+            {data.start}
           </div>
           <div className="border border-gray-900 p-1">to</div>
-          <div className="border border-gray-900 p-1">April 2022</div>
+          <div className="border border-gray-900 p-1">{data.end}</div>
           <div className="border border-gray-900 p-1 flex-1">
-            dateof.my/{query}
+            dateof.my/{data.query}
           </div>
           <div className="bg-green-500 rounded-r-xl p-1">Book</div>
         </div>
