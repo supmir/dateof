@@ -43,9 +43,9 @@ export default function Search(props) {
           <DotsHorizontalIcon className="w-12 h-full" />
         </div>
         <div className="bg-gray-100 mt-2 px-2 rounded-t-xl w-40 flex">
-          <div className="my-auto flex">
+          <div className="flex">
             <StarIcon className="w-4 my-auto" />
-            Date of
+            <div className="my-auto">Date of my...</div>
           </div>
         </div>
       </div>

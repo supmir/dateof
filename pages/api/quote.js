@@ -12,8 +12,8 @@ export default async function handler(req, res) {
     start: "Mac 2022",
     end: "May 2022",
     items: [
-      { id: 1, name: "Premium Link", price: 5000 },
-      { id: 2, name: "3 Months", desc: "3 x RM20", price: 60 },
+      { id: 1, name: "Premium", desc: "10 Links", premium: true, price: 5000 },
+      { id: 2, name: "Basic", desc: "5 Links", price: 60 },
     ],
     total: 5060,
   });
