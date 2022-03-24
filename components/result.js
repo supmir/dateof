@@ -5,8 +5,8 @@ export default function Result(props) {
 
   return (
     <Animator start="bottom" animation="default" end="bottom">
-      <div className="bg-white max-w-xl w-full">
-        <div className="mt-20 flex w-full gap-y-2 flex-col">
+      <div className="bg-white max-w-xl w-full rounded-b-xl">
+        <div className="flex w-full gap-y-2 flex-col">
           <div className="mx-auto flex flex-col">
             <div className="p-1 text-center italic">Event Date</div>
             <div className="border rounded-xl p-1">15 April 2022</div>

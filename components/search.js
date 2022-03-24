@@ -16,8 +16,9 @@ import {
   StarIcon,
 } from "@heroicons/react/solid";
 import { useState } from "react";
+import Result from "./result";
 export default function Search(props) {
-  const { setPhase, phase, setData } = props;
+  const { setPhase, phase, setData, data } = props;
   const queryRef = useRef();
   const [q, setQ] = useState(false);
 
@@ -36,12 +37,7 @@ export default function Search(props) {
   }
 
   return (
-    <motion.div
-      className={`m-auto flex flex-col w-full max-w-xl ${
-        phase === "show" && "mt-20"
-      }`}
-      layout
-    >
+    <div className="mx-auto flex flex-col w-full max-w-xl mt-10">
       <div className="m-auto flex w-full  bg-gray-300 h-10 rounded-t-xl shadow-xl">
         <div>
           <DotsHorizontalIcon className="w-12 h-full" />
@@ -111,10 +107,7 @@ export default function Search(props) {
           )}
         </motion.button>
       </div>
-
-      {phase !== "show" && (
-        <div className="w-full h-10 bg-gradient-to-b from-white"></div>
-      )}
-    </motion.div>
+      <div>{phase === "show" && <Result data={data} key="result" />}</div>
+    </div>
   );
 }
