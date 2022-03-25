@@ -21,7 +21,7 @@ export default function Home() {
     });
   }
   return (
-    <div className="w-full flex flex-col bg-brandSecondary h-screen">
+    <div className="w-full flex flex-col">
       <div className="h-20 md:h-20 lg:h-40 w-full bg-brandPrimary"></div>
       <Search
         phase={phase}
