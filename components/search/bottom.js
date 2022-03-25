@@ -62,23 +62,21 @@ C343.504,109.966,333.104,117.266,331.004,128.766z"
         </div>
         <div>dateof.my/</div>
       </div>
-      <div className="flex flex-1">
+      <div className="relative w-full">
         <input
           ref={queryRef}
           type="text"
           placeholder=""
-          className="py-1 outline-none ring-0 focus:ring-0 block w-full text-blue-500 underline  bg-gray-200 "
+          className={`py-1 outline-none ring-0 focus:ring-0 block w-full text-blue-500  bg-gray-200 ${
+            !q && "caret-transparent"
+          }`}
           onChange={() => {
-            setQ(true);
+            setQ(queryRef.current.value);
             setPhase("start");
             resetData();
           }}
         ></input>
-        <div
-          className={`absolute animate-bounce mt-3  bg-gray-200  ${
-            q && "hidden"
-          }`}
-        >
+        <div className={`absolute animate-blink py-1 top-0 ${q && "hidden"}`}>
           _
         </div>
       </div>

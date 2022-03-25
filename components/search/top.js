@@ -9,6 +9,7 @@ export default function Top(props) {
           { fill: "#c2410c", stroke: "#059669" },
         ].map(({ fill, stroke }) => (
           <svg
+            key={fill}
             fill={fill}
             stroke={stroke}
             viewBox="0 0 120 120"
@@ -19,7 +20,7 @@ export default function Top(props) {
               cx="60"
               cy="60"
               r="54.167"
-              stroke-linecap="round"
+              // stroke-linecap="round"
               // stroke-linejoin="round"
             />
           </svg>

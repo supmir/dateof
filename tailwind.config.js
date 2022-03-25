@@ -12,6 +12,14 @@ module.exports = {
         textPrimary: "#1A3066",
         textSecondary: "#546681",
       },
+      animation: {
+        blink: "blink 1s linear infinite",
+      },
+      keyframes: {
+        blink: {
+          "50%": { opacity: 0 },
+        },
+      },
     },
   },
   plugins: [],
