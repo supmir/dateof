@@ -5,7 +5,7 @@ import { sleep } from "../../lib/site";
 export default async function handler(req, res) {
   const { q: query } = req.query;
   console.log("start");
-  await sleep(2000);
+  await sleep(500);
   console.log("end");
   res.status(200).json({
     query: query,

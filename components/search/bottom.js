@@ -13,7 +13,7 @@ import {
 import { useState, useRef } from "react";
 
 export default function Bottom(props) {
-  const { setPhase, phase, setData } = props;
+  const { setPhase, phase, setData, resetData } = props;
 
   const [q, setQ] = useState(false);
   const queryRef = useRef();
@@ -71,6 +71,7 @@ C343.504,109.966,333.104,117.266,331.004,128.766z"
           onChange={() => {
             setQ(true);
             setPhase("start");
+            resetData();
           }}
         ></input>
         <div
