@@ -6,7 +6,7 @@ export default function PriceBubble(props) {
       <div
         className={`flex justify-between rounded-xl p-4  ${
           premium
-            ? "bg-purple-500 hover:ring-4 ring-black"
+            ? "bg-brandSecondary hover:ring-4 ring-black"
             : "bg-gray-300 hover:ring-2 ring-black"
         }`}
       >

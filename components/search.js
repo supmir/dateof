@@ -58,7 +58,7 @@ export default function Search(props) {
                 cy="60"
                 r="54.167"
                 stroke-linecap="round"
-                stroke-linejoin="round"
+                // stroke-linejoin="round"
               />
             </svg>
           ))}
