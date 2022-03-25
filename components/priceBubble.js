@@ -1,8 +1,22 @@
+import { motion } from "framer-motion";
+
 export default function PriceBubble(props) {
   const { name, desc, price, premium } = props.item;
 
   return (
-    <div className="mx-auto w-4/5 mt-2">
+    <motion.div
+      className="mx-auto w-4/5 mt-2"
+      variants={{
+        hidden: { y: -50, opacity: 0 },
+        show: {
+          y: 0,
+          opacity: 1,
+          transition: {
+            y: { stiffness: 100000, velocity: -1 },
+          },
+        },
+      }}
+    >
       <div
         className={`flex justify-between rounded-xl p-4  ${
           premium
@@ -16,6 +30,6 @@ export default function PriceBubble(props) {
         </div>
         <div className="my-auto">{price}</div>
       </div>
-    </div>
+    </motion.div>
   );
 }
